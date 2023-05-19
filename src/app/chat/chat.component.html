@@ -1,0 +1,10 @@
+<h1>Chat with Provider</h1>
+
+<div *ngFor="let message of messages">
+  <p>{{ message.sender.name }}: {{ message.object }}</p>
+</div>
+
+<div>
+  <input [(ngModel)]="newMessage" placeholder="Type your message">
+  <button (click)="sendMessage()">Send</button>
+</div>

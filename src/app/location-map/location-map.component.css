@@ -1,0 +1,9 @@
+@import "~leaflet/dist/leaflet.css";
+
+.text-center {
+    text-align: center;
+  }
+  
+  .map-container {
+    height: 400px;
+  }

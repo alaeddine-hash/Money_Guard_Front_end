@@ -1,0 +1,39 @@
+<!-- Display a text message -->
+<p class="text-center display-4 mb-5">User Solutions</p>
+
+<!-- Add a button to navigate to the solution form -->
+<div class="d-flex justify-content-center mb-5">
+  <button [routerLink]="['/form_solution']" class="btn btn-lg btn-primary">Add New Solution</button>
+</div>
+
+<!-- Create a container for the list of solutions -->
+<div class="container">
+  <div class="row gy-4">
+    <!-- Loop through the 'solutions' array using Angular's *ngFor directive -->
+    <div *ngFor="let solution of solutions" class="col-lg-4 col-md-6">
+      <!-- Create a card for each solution -->
+      <div class="card h-100 shadow">
+        <!-- Display an image for the solution -->
+        <img src="http://localhost:8082/api/images/solution-{{solution.id_solution}}.png" class="card-img-top img-responsive" alt="Image">
+        <!-- Card content -->
+        <div class="card-body d-flex flex-column">
+          <!-- Display the solution's title -->
+          <h5 class="card-title">{{solution.titleSolution}}</h5>
+          <!-- Display the solution's description -->
+          <p class="card-text flex-grow-1">{{solution.description}}</p>
+          <!-- Display the solution's price -->
+          <p class="card-text"><strong>Price:</strong> {{solution.price | currency}}</p>
+          <!-- Display the solution's provider name -->
+          <p class="card-text"><strong>Provider:</strong> {{currentUser?.name}}</p>
+          <div class="d-flex justify-content-between mt-auto">
+            <a [routerLink]="['/provider-calendar', solution.id_solution]" class="btn btn-primary">View Calendar</a>
+            <!-- Add a button to navigate to the add-image component for the current solution -->
+            <button [routerLink]="['/solutions', solution.id_solution, 'add-image']" class="btn btn-secondary">
+              <i class="bi bi-plus-square"></i> Add an image
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

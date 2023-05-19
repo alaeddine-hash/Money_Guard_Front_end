@@ -1,0 +1,174 @@
+<mat-toolbar color="primary">
+  <span style="margin: auto; font-size: 24px; font-weight: bold;">Empowered By TEK UP</span>    
+</mat-toolbar>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+</head>
+
+
+<!-- Container (caroousal section) -->
+<div class="container mt-5" id="carousal">
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide shadow-lg mb-5"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="3"
+        aria-label="Slide 4"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active img-fluid">
+        <img
+          src="../../assets/Images/home4.jpg"
+          class="d-block w-100 h-100"
+          alt="pic1"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h2></h2>
+          <h5><p>Checkout our Latest service NOW</p></h5>
+        </div>
+      </div>
+      <div class="carousel-item img-fluid">
+        <img
+          src="../../assets/Images/home1.jpg"
+          class="d-block w-100 h-100"
+          alt="pic2"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h2>"Everything you need is here to help you, from the infinitely small to the infinitely large, the world of construction will no longer hold any secrets for you."</h2>
+
+        </div>
+      </div>
+      <div class="carousel-item img-fluid">
+        <img
+          src="../../assets/Images/office1.jpg"
+          class="d-block w-100 h-100"
+          alt="pic3"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h2>"Our team has the expertise and resources to guide you through every step of your project, from ideation to execution. With our help, you can turn your vision into a reality."</h2>
+
+        </div>
+      </div>
+      <div class="carousel-item img-fluid">
+        <img
+          src="../../assets/Images/kitchen2.jpg"
+          class="d-block w-100 h-100"
+          alt="pic4"
+        />
+
+        <div class="carousel-caption d-none d-md-block">
+          <h2>"At our company, we believe that quality is the cornerstone of every successful project. </h2>
+
+        </div>
+      </div>
+
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let categorie of categorieList" class="col-sm-4">
+        <div  class="panel panel-primary">
+          <div class="panel-heading" >{{categorie.name}}</div>
+          <a [routerLink]="['/solutions', categorie.id, 'services']">
+          <img src="http://localhost:8082/api/images/categorie-{{categorie.id}}.png" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <div class="panel-footer">click to join this Service welcome ! </div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+</div>
+
+<!-- Container (about Section) -->
+<div id="about" class="container-fluid d-flex flex-column justify-content-center align-items-center">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h2>About Company Page</h2><br>
+      <h4>"At our company, we're proud to offer a diverse range of services that cater to all of our customers' needs. Whether you're looking for a stylish new haircut, building or renovating your dream home, or simply need your favorite meal delivered to your doorstep, our team has you covered. We strive to provide top-notch service and quality workmanship in everything we do.".</h4><br>
+      <p>At our company, we understand that life can be hectic and you don't always have the time to take care of your home and yourself. That's why we offer a range of services that bring the convenience of a salon or spa to the comfort of your own home. Whether you need a haircut, a massage, or a deep cleaning for your house, our team of trained professionals will come to you and provide top-quality service. Let us help you relax and take care of yourself without ever leaving your home..</p>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Tunis, Tunsia</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 27241647</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> Alaeddine.mansouri@tek-up.com</p>
+    </div>
+    <!-- New pub message -->
+  <div class="row">
+    <div class="col-sm-12 text-center mt-5">
+      <span class="pub-message" style="font-size: 20px; color: #3f51b5;">
+        <a [routerLink]="['/provider-application']">If you'd like to join us as a provider, you're welcome!</a>
+      </span>
+    </div>
+  </div>
+</div>
+</div>

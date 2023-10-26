@@ -3,6 +3,7 @@ import { StorageService } from './_services/storage.service';
 import { AuthService } from './_services/auth.service';
 import { Notification, NotificationService } from './_services/notification.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,8 +13,7 @@ export class AppComponent {
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
-  showProviderBoard = false;
-  showAssistantBoard = false;
+  showFinancialBoard = false;
   username?: string;
   count : number = 0;
   notifications: Notification[] = [];
@@ -35,9 +35,7 @@ export class AppComponent {
 
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showProviderBoard = this.roles.includes('ROLE_PROVIDER');
-      this.showAssistantBoard = this.roles.includes('ROLE_ASSISTANT');
-
+      this.showFinancialBoard = this.roles.includes('ROLE_Financial');
       this.username = user.username;
     }
     

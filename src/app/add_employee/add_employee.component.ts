@@ -40,11 +40,12 @@ export class Add_employeeComponent implements OnInit {
     this.empObj.id = this.empDetail.value.id;
     this.empObj.name = this.empDetail.value.name;
     this.empObj.lastname = this.empDetail.value.lastname;
-    this.empObj.birthday = this.empDetail.value.birthday;
     this.empObj.phone = this.empDetail.value.phone;
     this.empObj.email = this.empDetail.value.email;
     this.empObj.username = this.empDetail.value.username;
     this.empObj.password = this.empDetail.value.password;
+    this.empObj.jobTitle = this.empDetail.value.jobTitle;
+    this.empObj.grade = this.empDetail.value.grade;
     this.empObj.role = this.empDetail.value.role;
 
     this.empService.addEmployee(this.empObj).subscribe(res=>{

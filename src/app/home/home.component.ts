@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { UserService } from '../_services/user.service';
-import { CategorieService } from '../_services/categorie.service';
-import { Categorie } from '../models/Categorie';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,10 +10,9 @@ import { Categorie } from '../models/Categorie';
 export class HomeComponent implements OnInit {
 
   content?: string;
-  categorieList : Categorie[] = [];
 
 
-  constructor(private categorieService: CategorieService, private userService: UserService) { }
+  constructor( private userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.getPublicContent().subscribe({
@@ -36,14 +32,7 @@ export class HomeComponent implements OnInit {
         }
       }
     });
-    this.getAllCategories();
   }
 
-  getAllCategories() {
-    this.categorieService.getAllCategories().subscribe(res=>{
-      this.categorieList = res;
-    },err=>{
-      console.log("error while fetching data.")
-    });
-  }
+
 }

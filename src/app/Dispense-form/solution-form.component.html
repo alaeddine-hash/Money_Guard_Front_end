@@ -1,0 +1,35 @@
+<form [formGroup]="DispenseForm" (ngSubmit)="onSubmit()" class="form-container">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>amount</mat-label>
+      <input type="number" matInput formControlName="amount" class="form-control" />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Date</mat-label>
+      <input type="date" matInput formControlName="date" class="form-control" />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" class="form-control" />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Payment Method</mat-label>
+      <input matInput formControlName="paymentMethod" class="form-control" />
+    </mat-form-field>
+  </div>
+
+ 
+
+  <div class="form-group">
+    <button mat-raised-button color="primary" type="submit" [disabled]="DispenseForm.invalid" class="btn btn-primary">Submit</button>
+  </div>
+</form>

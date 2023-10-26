@@ -49,11 +49,12 @@ export class BoardAdminComponent implements OnInit {
     this.empDetail.controls['id'].setValue(emp.id);
     this.empDetail.controls['name'].setValue(emp.name);
     this.empDetail.controls['lastname'].setValue(emp.lastname);
-    this.empDetail.controls['birthday'].setValue(emp.birthday);
     this.empDetail.controls['phone'].setValue(emp.phone);
     this.empDetail.controls['username'].setValue(emp.username);
     this.empDetail.controls['email'].setValue(emp.email);
     this.empDetail.controls['password'].setValue(emp.password);
+    this.empDetail.controls['jobTitle'].setValue(emp.jobTitle);
+    this.empDetail.controls['grade'].setValue(emp.grade);
     this.empDetail.controls['role'].setValue(emp.role);
 
 
@@ -64,11 +65,12 @@ export class BoardAdminComponent implements OnInit {
     this.empObj.id = this.empDetail.value.id;
     this.empObj.name = this.empDetail.value.name;
     this.empObj.lastname = this.empDetail.value.lastname;
-    this.empObj.birthday = this.empDetail.value.birthday;
     this.empObj.phone = this.empDetail.value.phone;
     this.empObj.email = this.empDetail.value.email;
     this.empObj.username = this.empDetail.value.username;
     this.empObj.password = this.empDetail.value.password;
+    this.empObj.jobTitle = this.empDetail.value.jobTitle;
+    this.empObj.grade = this.empDetail.value.grade;
     this.empObj.role = this.empDetail.value.role;
 
     this.empService.updateEmployee(this.empObj).subscribe(res=>{

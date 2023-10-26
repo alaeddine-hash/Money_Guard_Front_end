@@ -10,6 +10,8 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Username</th>
+      <th scope="col">JobTitle</th>
+      <th scope="col">Grade</th>
       <th scope="col">Action</th>
     </tr>
     </thead>
@@ -18,10 +20,11 @@
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
       <td>{{user.lastname}}</td>
-      <td>{{user.birthday}}</td>
       <td>{{user.email}}</td>
       <td>{{user.phone}}</td>
       <td>{{user.username}}</td>
+      <td>{{user.jobTitle}}</td>
+      <td>{{user.grade}}</td>
       <td>
         <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editEmployee" (click)="editEmployee(user)">Edit</button>
         <button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(user)">Delete</button>
@@ -51,10 +54,6 @@
               <input type="text" formControlName="lastname" class="form-control" id="exampleInputLastName1" aria-describedby="exampleInputLastName1">
             </div>
             <div class="mb-3">
-              <label for="exampleInputBirthday1" class="form-label">Birthday</label>
-              <input type="text" formControlName="birthday" class="form-control" id="exampleInputBirthday1" aria-describedby="exampleInputBirthday1">
-            </div>
-            <div class="mb-3">
               <label for="exampleInputPhone1" class="form-label">Phone</label>
               <input type="text" formControlName="phone" class="form-control" id="exampleInputPhone1" aria-describedby="exampleInputPhone1">
             </div>
@@ -69,6 +68,14 @@
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
               <input type="text" formControlName="password" class="form-control" id="exampleInputPassword1" aria-describedby="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputJibTitle" class="form-label">JobTitle</label>
+              <input type="text" formControlName="jobTitle" class="form-control" id="exampleInputJibTitle" aria-describedby="exampleInputJibTitle">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputGrade" class="form-label">Grade</label>
+              <input type="text" formControlName="grade" class="form-control" id="exampleInputGrade" aria-describedby="exampleInputGrade">
             </div>
             <div class="mb-3">
               <label for="exampleInputRole1" class="form-label">Role</label>

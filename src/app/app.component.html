@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <div id="app">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">TaskHero</a>
+    <a class="navbar-brand" href="#">MoneyGuard</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,11 +22,14 @@
         <li class="nav-item" *ngIf="showAdminBoard">
           <a class="nav-link" routerLink="add_categorie">Add new Categorie</a>
         </li>
-        <li class="nav-item" *ngIf="showProviderBoard">
-          <a class="nav-link" routerLink="form_solution">Add a Solution</a>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="form_solution">Add a Dispense</a>
         </li>
-        <li class="nav-item" *ngIf="showProviderBoard">
-          <a class="nav-link" routerLink="user-solutions">My Solutions</a>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="user-solutions">My Dispenses</a>
+        </li>
+        <li class="nav-item" *ngIf="showFinancialBoard">
+          <a class="nav-link" routerLink="reclamations-responsible">all the Clients Statics</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
@@ -45,7 +48,6 @@
           <a class="nav-link" routerLink="profile">{{ username }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="location">My Current Location</a>
         <li class="nav-item">
           <a class="nav-link" routerLink="notifications">
             <i class="fas fa-bell"></i>
@@ -62,12 +64,12 @@
   <div class="container-fluid px-0">
     <!-- Hero section -->
     <div class="jumbotron text-center bg-info text-white">
-      <h1 class="display-4">Welcome to TaskHero</h1>
-      <p class="lead">Your one-stop solution for managing tasks efficiently</p>
+      <h1 class="display-4">Welcome to MoneyGuard</h1>
+      <p class="lead">MoneyGuard: Your ultimate solution for effective personal finance management.</p>
       <hr class="my-4">
       <p>Explore our features and services. Register or log in to access more!</p>
         <span class="pub-message" style="font-size: 20px; color: #3f51b5;">
-          <a [routerLink]="['/provider-application']">If you'd like to join us as a provider, you're welcome!</a>
+          <a [routerLink]="['/provider-application']">If you'd like to join us as a financial, you're welcome!</a>
         </span>
     </div>
 
@@ -77,16 +79,16 @@
         <div class="col-sm-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Be Confident with Task Hero </h5>
-              <p class="card-text">Our Providers are Certificated.</p>
+              <h5 class="card-title">Be Confident with Money Guard </h5>
+              <p class="card-text">MoneyGuard ensures that all its providers are certified professionals in their respective fields.</p>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Collaborative Work</h5>
-              <p class="card-text">Work together with your team on shared tasks and projects. Collaboration made easy!</p>
+              <h5 class="card-title">Empowered by Machine Learning</h5>
+              <p class="card-text">Powered by Machine Learning: MoneyGuard employs cutting-edge machine learning algorithms to automate expense categorization, track spending patterns, and offer tailored financial insights. It's your intelligent companion for informed financial decisions and goal achievement.</p>              
             </div>
           </div>
         </div>
@@ -94,7 +96,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Real-time Notifications</h5>
-              <p class="card-text">Stay up-to-date with real-time notifications. Never miss an important update!</p>
+              <p class="card-text">Stay Informed with MoneyGuard: Our real-time notifications keep you updated on financial matters, ensuring you never miss important updates. From bill reminders to budget insights, MoneyGuard provides peace of mind with timely alerts for your financial well-being.</p>              
             </div>
           </div>
         </div>
@@ -111,6 +113,6 @@
  <!-- Footer section -->
  <footer class="footer bg-dark text-white">
   <div class="container text-center">
-    <span>Copyright &copy; 2023 TaskHero. All rights reserved.</span>
+    <span>Copyright &copy; 2024 MoneyGuard. All rights reserved.</span>
   </div>
 </footer>

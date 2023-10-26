@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {LocationMapComponent} from "./location-map/location-map.component";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -14,7 +13,6 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import {Add_employeeComponent} from "./add_employee/add_employee.component";
 import { FullCalendarModule } from '@fullcalendar/angular';
-import {CalendarComponent} from "./calendar/calendar.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -22,18 +20,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 
 
+
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { AddCategorieComponent } from './add-categorie/add-categorie.component';
-import { SolutionComponent } from './solution/solution.component';
+import { SolutionComponent } from './Dispense/solution.component';
 import { CommonModule } from '@angular/common';
 
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import { SolutionFormComponent } from './solution-form/solution-form.component';
-import { UserSolutionsComponent } from './user-solutions/user-solutions.component';
+import { SolutionFormComponent } from './Dispense-form/solution-form.component';
+import { UserSolutionsComponent } from './user-dispenses/user-solutions.component';
 import { AddImageComponent } from './add-image/add-image.component';
-import { ProviderCalendarComponent } from './provider-calendar/provider-calendar.component';
-import { AvailabilityModalComponent } from './availability-modal/availability-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NotificationComponent } from './notification/notification.component';  // import MatDialogModule here
 
@@ -42,9 +36,9 @@ import { MatCardModule } from '@angular/material/card';
 
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ProviderApplicationFormComponent } from './provider-application-form/provider-application-form.component';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
 import { ChatComponent } from './chat/chat.component';
+import { ResponsibleReclamationsComponent } from './Responsible_Reclamations/ResponsibleReclamationsComponent';
 
 
 
@@ -62,20 +56,14 @@ import { ChatComponent } from './chat/chat.component';
     BoardAdminComponent,
     BoardUserComponent,
     Add_employeeComponent,
-    LocationMapComponent,
-    CalendarComponent,
-    AddCategorieComponent,
     SolutionComponent,
     SolutionFormComponent,
     UserSolutionsComponent,
     AddImageComponent,
-    ProviderCalendarComponent,
-    AvailabilityModalComponent,
     NotificationComponent,
-    ProviderApplicationFormComponent,
     AdminInterfaceComponent,
-    ChatComponent
-    
+    ChatComponent,
+    ResponsibleReclamationsComponent
     
   ],
     imports: [
@@ -100,7 +88,6 @@ import { ChatComponent } from './chat/chat.component';
         
     ],
   entryComponents: [
-    AvailabilityModalComponent
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

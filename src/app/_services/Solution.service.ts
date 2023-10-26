@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Availability } from '../models/Availability';
 import {Solution} from "../models/Solution";
 import { Reservation } from '../models/Reservation';
+import { Dispense } from '../models/Dispense';
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +19,20 @@ export class SolutionService {
     return this.http.get<Availability[]>(`${this.apiUrl}/availabilities`);
   }
 
-  getAllSolutions(): Observable<Solution[]> {
-    return this.http.get<Solution[]>(`${this.apiUrl}/solutions`);
+  getAllReclamations(): Observable<Dispense[]> {
+    return this.http.get<Dispense[]>(`${this.apiUrl}/dispenses/all`);
   }
 
-  getSolutionsByProviderId(id:number): Observable<Solution[]> {
-    return this.http.get<Solution[]>(`${this.apiUrl}/solutions/` + id + '/servicesByProvider');
+  getReclamationsByProviderId(id:number): Observable<Dispense[]> {
+    return this.http.get<Dispense[]>(`${this.apiUrl}/dispenses/id/` + id + '/userId');
   }
 
-  createAvailability(availability: Availability): Observable<Availability> {
-    return this.http.post<Availability>(`${this.apiUrl}/availabilities`, availability);
+  getReclamationsByProviderIdV1(id:number): Observable<Dispense[]> {
+    return this.http.get<Dispense[]>(`${this.apiUrl}/dispenses/id/` + id + '/userId');
+  }
+
+  createDispense(dispense: Dispense): Observable<Dispense> {
+    return this.http.post<Dispense>(`${this.apiUrl}/dispenses/add`, dispense);
   }
 
   createAvailabilityBySolution(availability: Availability, solution : Solution): Observable<Availability> {

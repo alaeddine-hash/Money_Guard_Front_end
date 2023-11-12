@@ -1,0 +1,72 @@
+/* Basic styles for the chat container */
+.chat-container {
+  max-width: 400px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Styles for the chat header */
+.chat-header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Styles for the chat body */
+.chat-body {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+/* Styles for user and bot messages */
+.user-message, .bot-message {
+  margin-bottom: 10px;
+}
+
+.user-message p, .bot-message p {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.user-message p {
+  background-color: #ecf0f1;
+}
+
+.bot-message p {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Styles for the chat footer (input and send button) */
+.chat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.chat-footer input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.chat-footer button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-footer button:hover {
+  background-color: #2980b9;
+}

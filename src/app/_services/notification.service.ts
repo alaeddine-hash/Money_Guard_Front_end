@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NotificationService {
-  private apiUrl = 'http://localhost:8082/api/reservations';  // Update with your Spring Boot application's URL
+  private apiUrl = 'http://localhost:8082/api/notifications';  // Update with your Spring Boot application's URL
 
   constructor(private http: HttpClient) { }
 
   getNotificationsForProvider(providerId: number): Observable<Notification[]> {
-    return this.http.get<Notification[]>(`${this.apiUrl}/providers/${providerId}/notifications`);
+    return this.http.get<Notification[]>(`${this.apiUrl}/all`);
   }
 
   deleteNotification(notificationId: number): Observable<void> {

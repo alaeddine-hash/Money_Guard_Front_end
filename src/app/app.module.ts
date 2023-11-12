@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 
 
+
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { SolutionComponent } from './Dispense/solution.component';
 import { CommonModule } from '@angular/common';
@@ -39,6 +40,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
 import { ChatComponent } from './chat/chat.component';
 import { ResponsibleReclamationsComponent } from './Responsible_Reclamations/ResponsibleReclamationsComponent';
+import { BudgetComponent } from './budget/budget.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DispenseStatisticsComponent } from './dispense-statistics/dispense-statistics.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 
 
@@ -63,7 +68,11 @@ import { ResponsibleReclamationsComponent } from './Responsible_Reclamations/Res
     NotificationComponent,
     AdminInterfaceComponent,
     ChatComponent,
-    ResponsibleReclamationsComponent
+    ResponsibleReclamationsComponent,
+    BudgetComponent,
+    DashboardComponent,
+    DispenseStatisticsComponent,
+    ChatbotComponent
     
   ],
     imports: [

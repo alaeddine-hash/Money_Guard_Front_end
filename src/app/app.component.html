@@ -28,6 +28,12 @@
         <li class="nav-item" *ngIf="isLoggedIn">
           <a class="nav-link" routerLink="user-solutions">My Dispenses</a>
         </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="budget">My Budget</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="dashboard">My dashboard</a>
+        </li>
         <li class="nav-item" *ngIf="showFinancialBoard">
           <a class="nav-link" routerLink="reclamations-responsible">all the Clients Statics</a>
         </li>

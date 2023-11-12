@@ -27,12 +27,12 @@ export class AddImageComponent implements OnInit {
     if (this.selectedFile) {
       const formData = new FormData();
       formData.append('image', this.selectedFile, this.selectedFile.name);
-      this.http.post(`http://localhost:8082/api/solutions/${this.solutionId}/add-image`, formData).subscribe(() => {
+      this.http.post(`http://localhost:8082/api/users/${this.solutionId}/add-image`, formData).subscribe(() => {
         // Handle success
-        this.router.navigate(['/user-solutions']); // Navigate to user-solutions route
+        this.router.navigate(['/user-solutions']); // Navigate to user-dispenses route
       }, error => {
         // Handle error
-        console.error('Reservation failed:', error);
+        console.error('dispense failed:', error);
       });
     }
   }

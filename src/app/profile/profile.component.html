@@ -17,12 +17,14 @@
         <div class="col-lg-4">
           <div class="card mb-4 shadow">
             <div class="card-body text-center">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              <img src="http://localhost:8082/api/images/user-{{currentUser.id}}.png" alt="avatar"
                    class="rounded-circle img-fluid mb-3" style="width: 150px;">
+                   <button [routerLink]="['/users', currentUser.id, 'add-image']" class="btn btn-secondary">
+                    <i class="bi bi-plus-square"></i> Add an image
+                  </button>
               <h5 class="my-3">{{ currentUser.name }} {{ currentUser.lastname }}</h5>
-              <p class="text-muted mb-1">Full Stack Developer</p>
-              <p class="text-muted mb-1">{{ currentUser.equipes }}</p>
-              <p class="text-muted mb-4">{{ currentUser.role }}</p>
+              <h4 class="text-muted mb-1">{{currentUser.birthday}}</h4>
+              <h3 class="text-muted mb-4">{{ currentUser.roles }}</h3>
               <div class="d-flex justify-content-center mb-2">
                 <button type="button" class="btn btn-outline-primary ms-1">Message</button>
               </div>
@@ -33,23 +35,23 @@
               <ul class="list-group list-group-flush rounded-3">
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fas fa-globe fa-lg text-warning"></i>
-                  <p class="mb-0">https://mdbootstrap.com</p>
+                  <p class="mb-0">{{currentUser.email}}</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                  <p class="mb-0">mdbootstrap</p>
+                  <p class="mb-0">Github</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                  <p class="mb-0">@mdbootstrap</p>
+                  <p class="mb-0">Twitter</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                  <p class="mb-0">mdbootstrap</p>
+                  <p class="mb-0">Instagram</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                  <p class="mb-0">mdbootstrap</p>
+                  <p class="mb-0">Facebook</p>
                 </li>
               </ul>
             </div>
@@ -63,7 +65,7 @@
                   <h6 class="font-weight-bold text-uppercase">Full Name</h6>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ currentUser.name }} {{ currentUser.lastname }}</p>
+                  <h3 class="text-muted mb-0">{{ currentUser.name }} {{ currentUser.lastname }}</h3>
                 </div>
               </div>
               <hr>
@@ -72,7 +74,7 @@
                   <h6 class="font-weight-bold text-uppercase">Email</h6>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ currentUser.email }}</p>
+                  <h3 class="text-muted mb-0">{{ currentUser.email }}</h3>
                 </div>
               </div>
               <hr>
@@ -81,25 +83,25 @@
                   <h6 class="font-weight-bold text-uppercase">Phone</h6>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ currentUser.phone }}</p>
+                  <h3 class="text-muted mb-0">{{ currentUser.phone }}</h3>
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <h6 class="font-weight-bold text-uppercase">JobTitle</h6>
+                  <h6 class="font-weight-bold text-uppercase">BirthDay</h6>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ currentUser.jobTitle }}</p>
+                  <h3 class="text-muted mb-0">{{ currentUser.birthday }}</h3>
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <h6 class="font-weight-bold text-uppercase">Grade</h6>
+                  <h6 class="font-weight-bold text-uppercase">UserName</h6>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ currentUser.grade }}</p>
+                  <h3 class="text-muted mb-0">{{ currentUser.username }}</h3>
                 </div>
               </div>
             </div>

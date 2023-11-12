@@ -16,6 +16,9 @@ import { NotificationComponent } from './notification/notification.component';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
 import { ChatComponent } from './chat/chat.component';
 import { ResponsibleReclamationsComponent } from './Responsible_Reclamations/ResponsibleReclamationsComponent';
+import { BudgetComponent } from './budget/budget.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -29,11 +32,14 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'user-solutions', component: UserSolutionsComponent },
   { path: 'reclamations-responsible', component: ResponsibleReclamationsComponent },
-  { path: 'solutions/:sid/add-image', component: AddImageComponent }, // Add a route for AddImageComponent
+  { path: 'users/:sid/add-image', component: AddImageComponent }, // Add a route for AddImageComponent
   { path: 'solutions/:id/services', component: SolutionComponent },
   { path: 'notifications', component: NotificationComponent }, // <-- Add this line
   { path: 'chat/:providerUsername', component: ChatComponent },
-  { path: 'admin_interface', component: AdminInterfaceComponent }
+  { path: 'admin_interface', component: AdminInterfaceComponent },
+  { path: 'budget', component: BudgetComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'chatbot', component: ChatbotComponent },
 ];
 
 @NgModule({

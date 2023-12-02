@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-chatbot',
@@ -13,7 +14,7 @@ export class ChatbotComponent  {
   chatMessages: any[] = [];  // Add this line
   backendUrl: string = 'http://localhost:8082/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public chatService : ChatService) {}
 
   generateResponse() {
     const request = {

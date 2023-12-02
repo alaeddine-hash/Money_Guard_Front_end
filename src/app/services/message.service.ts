@@ -13,7 +13,8 @@ export class MessageService {
   constructor(private http: HttpClient) { }
 
   getMessagesByUserName(username: string): Observable<Message[]> {
-    return this.http.get<Message[]>(`${this.apiUrl}/${username}`);
+    console.log(username)
+    return this.http.get<Message[]>(`${this.apiUrl}/username_recipient/${username}`);
   }
 
   getUserByUserNameRecipient(providerUsername: string): Observable<User> {
@@ -30,5 +31,10 @@ export class MessageService {
 
   sendMessage(message: Message): Observable<Message> {
     return this.http.post<Message>(`${this.apiUrl}/add`, message);
+  }
+
+  getCombinedMessages(senderId: number, recipientId: number): Observable<Message[]> {
+    const url = `${this.apiUrl}/combined?senderId=${senderId}&recipientId=${recipientId}`;
+    return this.http.get<Message[]>(url);
   }
 }

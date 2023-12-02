@@ -27,35 +27,38 @@ export class ChatComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Get the provider ID from the route parameters
-    this.providerUsername = this.route.snapshot.params['providerUsername'];
-    this.currentUser = this.storageService.getUser()
-    this.senderIdHere = this.currentUser.id
+    /// Get the provider ID from the route parameters
+  this.providerUsername = this.route.snapshot.params['providerUsername'];
+  this.currentUser = this.storageService.getUser();
+  this.senderIdHere = this.currentUser.id;
 
-    console.log("senderId ", this.senderIdHere)
+  console.log("senderId ", this.senderIdHere);
 
-    this.messageService.getUserByUserNameRecipient(this.providerUsername).subscribe((data : User) =>{
-       this.provider = data;
+  this.messageService.getUserByUserNameRecipient(this.providerUsername).subscribe((data: User) => {
+    this.provider = data;
+
+    // Fetch the combined messages for the chat from the API
+    this.messageService.getCombinedMessages(this.currentUser.id, this.provider.id).subscribe((messages: Message[]) => {
+      this.messages = messages;
+      console.log("messages ", this.messages);
     });
-
-
-    // Fetch the messages for the chat from the API using the provider ID
-    this.messageService.getUserByUserNameSender(this.providerUsername).subscribe((data: Message[]) => {
-      this.messages = data;
-      console.log("messages ",this.messages)
-    });
+  },
+  (error) => {
+    console.error('Error fetching provider information:', error);
+    // Handle the error, e.g., display an error message or redirect the user
+  });
   }
 
   sendMessage(): void {
     // Create a new message object
     const message: Message = {
       msg_id :1,
-      sender: this.currentUser, // Assuming the sender ID is 1, change it according to your implementation
       recipient_id : this.provider.id,
-      sender_id : this.senderIdHere,
-      recipient: this.provider,
+      sender_id : this.currentUser.id,
       object: this.newMessage,
-      date: ""
+      date: new Date().toISOString(),  // Update to the current date and time
+      senderUserName : '',
+      recipientUserName : ''
     };
 
     console.log(message)

@@ -1,0 +1,12 @@
+<!-- messages.component.html -->
+
+<h1>Your Message History</h1>
+
+<div *ngFor="let message of messages" class="message-container">
+  <a [routerLink]="['/chat', { providerUsername: message.senderUserName }]">
+    <div class="message-card">
+      <p>{{ message.senderUserName }}:</p>
+      <p>{{ message.object }}</p>
+    </div>
+  </a>
+</div>

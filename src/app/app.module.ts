@@ -44,6 +44,7 @@ import { BudgetComponent } from './budget/budget.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DispenseStatisticsComponent } from './dispense-statistics/dispense-statistics.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 
@@ -72,7 +73,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     BudgetComponent,
     DashboardComponent,
     DispenseStatisticsComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    MessagesComponent
     
   ],
     imports: [

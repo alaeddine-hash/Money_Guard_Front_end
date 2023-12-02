@@ -23,6 +23,7 @@ export class NotificationComponent implements OnInit {
     // get the provider ID from the authentication service or another source
     this.notificationService.getNotificationsForProvider(this.currentUser.id)
       .subscribe(notifications => {
+        console.log(notifications)
         // Sort notifications in descending order by ID
         this.notifications = notifications.sort((a: Notification, b: Notification) => {
           return b.id - a.id;

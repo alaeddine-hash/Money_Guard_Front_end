@@ -1,28 +1,40 @@
+/* chat.component.css */
+
 h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 300px;
-    padding: 5px;
-    margin-right: 10px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border:
-    none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-    
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.chat-message {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+
+.message-input {
+  margin-top: 20px;
+}
+
+input {
+  width: 220px;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

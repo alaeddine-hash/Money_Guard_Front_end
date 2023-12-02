@@ -19,6 +19,7 @@ import { ResponsibleReclamationsComponent } from './Responsible_Reclamations/Res
 import { BudgetComponent } from './budget/budget.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { MessagesComponent } from './messages/messages.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,6 +41,9 @@ const routes: Routes = [
   { path: 'budget', component: BudgetComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'chatbot', component: ChatbotComponent },
+  { path: 'chat', component: ChatComponent },
+  { path: 'messages', component: MessagesComponent },
+
 ];
 
 @NgModule({

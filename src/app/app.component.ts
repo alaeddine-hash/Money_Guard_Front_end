@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StorageService } from './_services/storage.service';
 import { AuthService } from './_services/auth.service';
 import { Notification, NotificationService } from './_services/notification.service';
+import { ChatService } from './chat.service';
 
 
 
@@ -19,7 +20,7 @@ export class AppComponent {
   count : number = 0;
   notifications: Notification[] = [];
   currentUser : any;
-  constructor(private storageService: StorageService, private authService: AuthService, private notificationService: NotificationService) { }
+  constructor(private storageService: StorageService, private authService: AuthService, private notificationService: NotificationService, public chatService: ChatService) { }
 
   async ngOnInit(): Promise<void> {
 
@@ -60,5 +61,9 @@ export class AppComponent {
     this.notificationService.getNotificationsForProvider(this.currentUser.id)
       .subscribe(notifications => this.notifications = notifications
         );
+  }
+
+  openChat() {
+    this.chatService.toggleChat();
   }
 }

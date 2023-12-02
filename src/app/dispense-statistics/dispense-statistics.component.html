@@ -34,4 +34,19 @@
 </div>
 </div>
 
+<!-- Add a clickable link or button -->
+<button (click)="toggleFinancialsVisibility()">Show Financials</button>
+
+<!-- Display financials in small cards based on visibility flag -->
+<div *ngIf="showFinancials" class="financials-container">
+  <!-- Iterate over financials and display them in small cards -->
+  <div *ngFor="let financial of financials" class="financial-card">
+    <!-- Display financial information here -->
+    <p>{{ financial.name }}</p>
+    <p>{{ financial.lastname }}</p>
+    <p>{{ financial.email }}</p>
+    <!-- Add other financial details as needed -->
+  </div>
+</div>
+
 

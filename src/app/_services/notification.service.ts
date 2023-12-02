@@ -11,7 +11,7 @@ export class NotificationService {
   constructor(private http: HttpClient) { }
 
   getNotificationsForProvider(providerId: number): Observable<Notification[]> {
-    return this.http.get<Notification[]>(`${this.apiUrl}/all`);
+    return this.http.get<Notification[]>(`http://localhost:8082/api/users/notifications/` + providerId);
   }
 
   deleteNotification(notificationId: number): Observable<void> {

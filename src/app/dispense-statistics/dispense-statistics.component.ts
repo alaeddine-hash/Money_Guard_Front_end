@@ -2,6 +2,8 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { BudgetService } from '../budget.service';
 import { StorageService } from '../_services/storage.service';
+import { UserService } from '../_services/user.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-dispense-statistics',
@@ -18,9 +20,12 @@ export class DispenseStatisticsComponent implements AfterViewInit {
   currentUser: any;
   category?: string;
   percentage?: number;
+  financials?:User[];
+  showFinancials: boolean = false;  // Flag to control visibility of financials
 
 
-  constructor(private budgetService: BudgetService, private storageService: StorageService) {}
+
+  constructor(private budgetService: BudgetService, private storageService: StorageService, private userService : UserService) {}
 
    // Function to generate random colors
    generateRandomColors(count: number): string[] {
@@ -34,6 +39,17 @@ export class DispenseStatisticsComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.currentUser = this.storageService.getUser();
+    this.userService.getAllFinancinals().subscribe(
+      (data: User[]) => {
+        console.log('from getAllFinancinals', data);
+        // Handle success
+        this.financials = data;
+      },
+      (error) => {
+        console.error(error);
+        // Handle error
+      }
+    );;
   
     // Initialize the chart with empty data
     this.chart = new Chart(this.chartCanvas.nativeElement, {
@@ -146,7 +162,16 @@ export class DispenseStatisticsComponent implements AfterViewInit {
       console.error('Chart instance is not available.');
     }
   }
+
+  // Method to toggle the visibility of financials
+  toggleFinancialsVisibility(): void {
+    this.showFinancials = !this.showFinancials;
+  }
+
+
 }
+
+
 
 interface DispenseItem {
   category: string;
